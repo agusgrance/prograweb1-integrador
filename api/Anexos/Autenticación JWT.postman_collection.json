@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "842c292d-599f-446f-935b-843e646a4d57",
+		"name": "Autenticación JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listado de usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{JWT}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perfil de usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{JWT}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/usuarios/perfil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"usuarios",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación de usuarios",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{JWT}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Leonel Messi\",\n    \"email\": \"leomessi@afa.org.ar\",\n    \"password\": \"arg10\",\n    \"foto\": \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAAyADIDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAIDBAUGAf/EABgBAAMBAQAAAAAAAAAAAAAAAAACAwQB/9oADAMBAAIQAxAAAAHCqA51eqgStQdnQawQKAVMjA2hdp7TNrz7MtrViaFh1OvtTqZJjbLGzV+0w85xUk6WoCtLUFJ52uBpxAJ0/8QAIhAAAgICAQUAAwAAAAAAAAAAAgMBBAAREgUQExQhICIy/9oACAEBAAEFAtZEbnY74jMfgOBVqrm2lQjErHJzfauO2j68NBaIWzXkzWa7EXNSdMEVchlZjGu3opVRZXIFJE9BKVYaqc5PTVTIUqxC8Jmq5ABSqLAaqz55b0p3tRgTPlL+eoT86d+1KPjLpFL9zn//xAAfEQACAQQCAwAAAAAAAAAAAAAAARECAxAhBDESMkP/2gAIAQMBAT8BjY7WpyqtyJpjaw58Sm401QKlKd9knJ6Z9C364//EAB4RAAIBBAMBAAAAAAAAAAAAAAABEQMQEiETMUFC/9oACAECAQE/ATktsa0OSGQKJHTTWRnPatQ8PgqW/8QAJxAAAQMEAAUEAwAAAAAAAAAAAQACEQMSITEQICJBcRNRgaEyQsH/2gAIAQEABj8C4d10n45SPfCg2z3koVaMbgwjInk+0X+m4k4KdTDLbtyU6NTytmR4VkzjJU3Z8KbTHG8gvqEb9lf+sCCi6mepMpdDoiTuU20Wku7NhEir9J005cNIwSerA0m3bxoJxGzO01rYJ0hIjwcLajsvlUfP8Wc9RUjaMuP4La//xAAgEAEAAgMAAgMBAQAAAAAAAAABABEhMUFRYRCRsYFx/9oACAEBAAE/IcGUYTqtLJvfLcqotSnxFsqWvwIFggRU3QzdkIiI+NQzs1+GU7bgC94nAmcVMwfTUSVjT4yyhu1Wy8fJZeyAwAMV1/YQXsmfgjDZKR79RDkpLPsqEoum6z/YxyKhC7zzKEAZbXOzFxWyzF29GDDKkqP6qGgpA2Qac1KVn6iu26QHCXscVve+oV7yws4ajenT8jBi0uyErf2czMwC6T/Jew933Cgyn//aAAwDAQACAAMAAAAQdWHDqG/MjagzgCj9/8QAHREAAwACAwEBAAAAAAAAAAAAAAERITEQQZFxsf/aAAgBAwEBPxBdhGkLgwSRkIMLZVnfD0bUcfoti62JGVV4Rwlt8R+3H//EAB0RAAMAAgIDAAAAAAAAAAAAAAABESExEFFBcYH/2gAIAQIBAT8QbxgVOI88LshEUbFLRQiLHVgcH7KjBCrs2D09m/zj/8QAIRABAQADAQEAAAcAAAAAAAAAAREAITFBURBhcYGRobH/2gAIAQEAAT8QRos+4qE+t4B1ye0DsAwSYPCY3byTncpjgMkUbI/qmDm9WxZWnmPgZCAIyzmSrrjLlmuXWRjvhTaYdEQbv4XJy4yey1fa7xziArRixflP7xuWkWcSsn5YD5fwCndza6uQ+mWbDW73SOF0AW5SFX2OKZFqkQpoaOezuVDikovynMsYiPyZKSrjoNPCjNLYcvXDFQl6KKtjXXmsTQQgg1wsGJp72hjufRO8M1U4jIsKuyfcFoOBKC0rS/xjEkWjL/oYfCROZV1259ccoh3h67RvM2Hg3yCG0HcSpnUtCuuaMQBz2gZodGDq+4IFodxjmQtae+Y91KrvrWBFSx0xy4aMQAeh++NdWPQTbjh0WhRXmmGI4nuf/9k=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{URL}}/usuarios",
+					"protocol": "http",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualización perfil",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{JWT}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Híper Root\",\n    \"email\": \"super@admin.com\",\n    \"password\": \"abc123\",\n    \"foto\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{URL}}/usuarios/perfil",
+					"protocol": "http",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuarios",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrado de usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{JWT}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{URL}}/usuarios/2",
+					"protocol": "http",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"usuarios",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"JWT\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"super@admin.com\",\n    \"password\": \"abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{URL}}/login",
+					"protocol": "http",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
